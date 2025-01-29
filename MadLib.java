@@ -1,4 +1,4 @@
-//© A+ Computer Science  -  www.apluscompsci.com
+//ï¿½ A+ Computer Science  -  www.apluscompsci.com
 //Name -
 //Date -
 //Class -
@@ -20,13 +20,20 @@ public class MadLib
 
 	public MadLib()
 	{
-
+		verbs.add("punched");
+		nouns.add("Walmart");
+		story="I punched Walmart in a massive way.";
 	}
 
 	public MadLib(String fileName)
 	{
 		//load stuff
 
+
+		//read first from story.string
+		//scanner
+		// check if it is any simblas
+		//#nouns , @verb, &adj, else, concatonate back to story
 		try
 		{
 			//Read the different parts of the story and concatenate the resulting
@@ -37,7 +44,7 @@ public class MadLib
 
 				//If what was read in is one of the symbols, find a random
 				//word to replace it.
-			}
+			
 
 
 		}
@@ -52,7 +59,10 @@ public class MadLib
 	{
 		try
 		{
+			Scanner rader = new Scanner(new File("nouns.dat"));
 
+			while(reader.hasNext())
+				nouns.add(reader.next());
 		}
 		catch(Exception e)
 		{

@@ -17,6 +17,10 @@ public class RandomStuff {
 
     	System.out.println(y);
 
+		System.out.println((int)Math.random()*12-3);
+		
+		System.out.println((int)rand.nextInt(15)+13);
+
     }
 
 
