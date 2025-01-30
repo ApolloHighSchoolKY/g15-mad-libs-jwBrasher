@@ -28,7 +28,9 @@ public class MadLib
 	public MadLib(String fileName)
 	{
 		//load stuff
-
+		loadAdjectives();
+		loadNouns();
+		loadVerbs();
 
 		//read first from story.string
 		//scanner
@@ -41,7 +43,13 @@ public class MadLib
 
 
 			//While there is more of the story, read in the word/symbol
-
+			while words are not #,&,@ print
+				print the more words
+				if there is # make random noun before putting out more words keep read
+				else if there is @ make random verb before putting out more words keep read
+				else if there is & make random adjective before putting put adjective then keep read
+				else
+				put words out
 				//If what was read in is one of the symbols, find a random
 				//word to replace it.
 			
@@ -75,7 +83,10 @@ public class MadLib
 	{
 		try
 		{
+			Scanner rader = new Scanner(new File("verbs.dat"));
 
+			while(reader.hasNext())
+				verbs.add(reader.next());
 		}
 		catch(Exception e)
 		{
@@ -87,7 +98,10 @@ public class MadLib
 	{
 		try
 		{
+			Scanner rader = new Scanner(new File("adjectives.dat"));
 
+			while(reader.hasNext())
+				adjectives.add(reader.next());
 		}
 		catch(Exception e)
 		{
@@ -97,21 +111,25 @@ public class MadLib
 
 	public String getRandomVerb()
 	{
-		return "";
+		int rv = (int)(Math.random()*verbs.size());
+		return "" +verbs.get(spot);
 	}
 
 	public String getRandomNoun()
 	{
-		return "";
+		Random rand = new Random();
+
+		return "" + nouns.get(rand.nextInt(nouns.size()));
 	}
 
 	public String getRandomAdjective()
 	{
-		return "";
+		Random randa = new Random();
+		return "" + adjectives.get(randa.nextInt((adjectives.size())));
 	}
 
 	public String toString()
 	{
-		return "";
+		return "" + story;
 	}
 }
